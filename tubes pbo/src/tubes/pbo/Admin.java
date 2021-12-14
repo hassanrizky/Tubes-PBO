@@ -12,6 +12,7 @@ package tubes.pbo;
 public class Admin extends Employee{
     private Penjadwalan jadwal;
     private receiveReport receive;
+    private int x;
 
     public Admin(String NoIdentitas, String nama) {
         super(NoIdentitas, nama);
