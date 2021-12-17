@@ -7,10 +7,16 @@ import java.time.LocalDate;
  */
 public class Penjadwalan {
     private String No_Penjadwalan;
-    private PekerjaLapangan No_Identitas;
+    private PekerjaLapangan PL;
     private LocalDate Tanggal_Maintenance;
     private returnReport hasilLaporan;
     
+    public Penjadwalan(String No_Penjadwalan, String No_Identitas, LocalDate Tanggal_Maintenance, String nama, String DeskripsiTugas){
+        PL = new PekerjaLapangan(No_Identitas, nama, DeskripsiTugas);
+        setNoPenjadwalan(No_Penjadwalan);
+        setTanggalMaintenance(Tanggal_Maintenance);
+        
+    }
     public void setNoPenjadwalan(String No_Penjadwalan){
         this.No_Penjadwalan = No_Penjadwalan;
     }
@@ -23,10 +29,10 @@ public class Penjadwalan {
     public LocalDate getTanggalMaintenance(){
         return Tanggal_Maintenance;
     }
-    public PekerjaLapangan getPekerjaLapangan(){
-        return No_Identitas;
+    public String getPekerjaLapangan(PekerjaLapangan P){
+        return P.getNo_Identitas();
     }
-    public void setHasilLaporan(returnReport hasilLaporan){
-        this.hasilLaporan = hasilLaporan;
+    public void setHasilLaporan(String hasilLaporan){
+        this.hasilLaporan.setDeskripsi(hasilLaporan);
     }
 }
